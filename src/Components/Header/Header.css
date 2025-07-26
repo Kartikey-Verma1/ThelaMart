@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+
+}
+.header_logo{
+    display: flex;
+}
+.header_options_list{
+    display: flex;
+    list-style-type: none;
+}
+.cart, .profile{
+    width: 2rem;
+}
