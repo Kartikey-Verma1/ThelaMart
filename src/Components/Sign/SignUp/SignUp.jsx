@@ -4,8 +4,14 @@ import "./signup.css";
 const SignUp = ()=>{
     const [role, setrole] = useState(false);
     const [fssainum, setfssainum] = useState("");
+
+    const handlefssainum = (e)=>{
+        setfssainum(e.target.value);
+    }
+
     return(
         <div className="signup">
+            <h2 className="sign_up_head">SignUp</h2>
             <form className="signup_form">
                 <label htmlFor="name"></label>
                 <input type="text" id="name" placeholder="Enter Your Name" className="signup_name"/>
@@ -23,9 +29,9 @@ const SignUp = ()=>{
                 </label>
 
                 {
-                    role && 
+                    role == "Provider" && 
                     <label>
-                        <input type="text" placeholder="Enter FSSAI Number" className="signup_fssai"/>
+                        <input type="text" placeholder="Enter FSSAI Number" className="signup_fssai" onChange={handlefssainum}/>
                     </label>
                 }
 
@@ -33,6 +39,8 @@ const SignUp = ()=>{
                 <input type="text" id="passwordinit" placeholder="Create a Password" className="signup_passwordinit"/>
                 <label htmlFor="passwordrepeat"></label>
                 <input type="text" id="passwordrepeat" placeholder="Repeat your Password" className="signup_passwordrepeat"/>
+
+                <button className="signup_submit">Submit</button>
             </form>
         </div>
     )

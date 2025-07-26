@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const SignIn = ()=>{
     return (
         <div className="signin">
+            <h2 className="signin_head">SignIn</h2>
             <form className="signin_form">
                 <label htmlFor="email"></label>
                 <input type="email" id="email" placeholder="Enter Your Gmail" className="signin_email"/>
