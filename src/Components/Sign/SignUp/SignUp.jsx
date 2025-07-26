@@ -9,6 +9,14 @@ const SignUp = ()=>{
         setfssainum(e.target.value);
     }
 
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        if(fssainum.length == 14){
+            alert("enter valid fssai number");
+            return;
+        } 
+    }
+
     return(
         <div className="signup">
             <h2 className="sign_up_head">SignUp</h2>
@@ -40,7 +48,7 @@ const SignUp = ()=>{
                 <label htmlFor="passwordrepeat"></label>
                 <input type="text" id="passwordrepeat" placeholder="Repeat your Password" className="signup_passwordrepeat"/>
 
-                <button className="signup_submit">Submit</button>
+                <button className="signup_submit" onClick={handleSubmit}>Submit</button>
             </form>
         </div>
     )
