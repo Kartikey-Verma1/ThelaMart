@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header_logo">
-                <img src="../../../public/logo.png" alt="logo" className="header_logo_img"/>
+                <img src="../../../public/logo2.png" alt="logo" className="header_logo_img"/>
             </div>
             <div className="header_options">
                 <ul className="header_options_list">

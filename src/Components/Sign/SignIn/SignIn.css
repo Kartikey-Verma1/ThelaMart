@@ -1,0 +1,104 @@
+/* Global styles */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* SignIn container */
+.signin {
+  width: 400px;
+  margin: 80px auto;
+  padding: 30px 40px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.57);
+}
+
+/* Heading */
+.signin_head {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+/* Form styles */
+.signin_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input fields */
+.signin_form input[type="email"],
+.signin_form input[type="password"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.signin_form input::placeholder {
+  color: #888;
+}
+
+/* Submit button */
+.signin_submit {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007acc;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signin_submit:hover {
+  background-color: #005f9e;
+}
+
+/* Account prompt */
+.signin_ques {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* Link to SignUp */
+.signin_ques a {
+  color: #00bfff;
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.signin_ques a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 480px) {
+  .signin {
+    width: 90%;
+    padding: 20px;
+    margin: 40px auto;
+  }
+
+  .signin_head {
+    font-size: 22px;
+  }
+
+  .signin_submit {
+    font-size: 15px;
+  }
+
+  .signin_ques {
+    font-size: 13px;
+  }
+}
