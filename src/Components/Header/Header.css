@@ -45,8 +45,7 @@
   color: #00bfff;
 }
 
-/* Cart & Profile icons (fluid) */
-.cart,
+/* Profile icons (fluid) */
 .profile {
   width: clamp(20px, 2vw, 24px);
   height: auto;
