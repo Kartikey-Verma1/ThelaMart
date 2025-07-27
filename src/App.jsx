@@ -27,7 +27,7 @@ const App = ()=>{
         <Route path="/" element={<Layout user={user} setuser={setuser}/>}>
 
           <Route path="/" element={<VendorBody />} />
-          <Route path="/profile" element={<Profile user={user} setuser={setuser}/>} />
+          {user && <Route path="/profile" element={<Profile user={user} setuser={setuser}/>} />}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/additems" element={<AddItems user={user} setuser={setuser}/>} />
@@ -36,7 +36,7 @@ const App = ()=>{
 
         <Route path="/signin" element={<SignIn setuser={setuser} />} />
         <Route path="/signup" element={<SignUp setuser={setuser} />} />
-
+        
       </Routes>
     </BrowserRouter>
   )

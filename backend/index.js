@@ -47,9 +47,9 @@ app.patch('/provider/remove-item', async (req, res) => {
 
 // Vendor signup
 app.post("/vendor", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, phone } = req.body;
   try {
-    const vendor = await Vendor.create({ name, email, password });
+    const vendor = await Vendor.create({ name, email, password, phone });
     res.status(201).json(vendor);
   } catch (err) {
     console.error(err);
@@ -59,9 +59,9 @@ app.post("/vendor", async (req, res) => {
 
 // Provider signup
 app.post("/provider", async (req, res) => {
-  const { name, email, password, fssai, items = [] } = req.body;
+  const { name, email, password, fssai, phone, items = [] } = req.body;
   try {
-    const provider = await Provider.create({ name, email, password, fssai, items });
+    const provider = await Provider.create({ name, email, password, fssai, phone, items });
     res.status(201).json(provider);
   } catch (err) {
     console.error(err);

@@ -67,7 +67,27 @@ body {
   background-color: #005f9e;
 }
 
-/* 📱 Responsive Design */
+.signup_form input[type="number"]#phone {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.signup_form input[type="number"]#phone::placeholder {
+  color: #888;
+}
+
+@media screen and (max-width: 480px) {
+  .signup_form input[type="number"]#phone {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .signup {
     width: 90%;

@@ -28,6 +28,7 @@ const Profile = ({user, setuser})=>{
                 <h2 className="profile_head">Profile</h2>
                 <div className="profile_info">
                     <div className="name"><p className="name_title">Name:</p><p className="name_user">{user.name}</p></div>
+                    <div className="phone"><p className="phone_title">Phone:</p><p className="phone_user">{user.phone}</p></div>
                     <div className="email"><p className="email_title">Email:</p><p className="email_user">{user.email}</p></div>
                     {(user?.fssai) && <div className="fssai"><p className="fssai_title">Fssai:</p><p className="email_user">{user.fssai}</p></div>}
                     {(user?.fssai) ? 

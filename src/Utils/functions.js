@@ -1,7 +1,7 @@
 import { providerget, providerpost, vendorget, vendorpost } from "./urls";
 
-export const adduser = async ({name, email, passwordinit, fssainum, role, navigate, setuser})=>{
-    const payload = { name: name, email: email, password: passwordinit, fssai: fssainum, items: [] };
+export const adduser = async ({name, phone, email, passwordinit, fssainum, role, navigate, setuser})=>{
+    const payload = { name: name, phone: phone, email: email, password: passwordinit, fssai: fssainum, items: [] };
     if (role === "Provider") payload.fssai = fssainum;
 
     const url = (role === "Provider") ? providerpost : vendorpost;

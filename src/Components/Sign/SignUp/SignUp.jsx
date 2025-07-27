@@ -7,6 +7,7 @@ const SignUp = ({setuser})=>{
     const [role, setrole] = useState(false);
     const [fssainum, setfssainum] = useState("");
     const [name, setname] = useState("");
+    const [phone, setphone] = useState("");
     const [email, setemail] = useState("");
     const [passwordinit, setpasswordinit] = useState("");
     const [passwordrepeat, setpasswordrepeat] = useState("");
@@ -17,6 +18,10 @@ const SignUp = ({setuser})=>{
         e.preventDefault();
         if(passwordinit != passwordrepeat){
             alert("Password must match");
+            return;
+        }
+        if(phone.length != 10){
+            alert("Enter Valid Telephone Number");
             return;
         }
         if(role === "Provider" && fssainum.length != 14){
@@ -40,7 +45,7 @@ const SignUp = ({setuser})=>{
         // add user
         setloading(true);
         try{
-            await adduser({name, email, passwordinit, fssainum, role, navigate, setuser});
+            await adduser({name, phone, email, passwordinit, fssainum, role, navigate, setuser});
         } catch (err) {
             alert("Something went wrong please try again!");
         } finally {
@@ -59,6 +64,14 @@ const SignUp = ({setuser})=>{
                     placeholder="Enter Your Name" 
                     required className="signup_name" 
                     onChange={(e)=>{setname(e.target.value)}}/>
+                
+                <label htmlFor="phone"></label>
+                <input 
+                    type="number" 
+                    id="phone" 
+                    placeholder="Enter Your Telephone Number" 
+                    required className="signup_phone" 
+                    onChange={(e)=>{setphone(e.target.value)}}/>
 
                 <label htmlFor="email"></label>
                 <input 

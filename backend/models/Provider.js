@@ -5,6 +5,7 @@ const ProviderSchema = new mongoose.Schema({
     email: String,
     password: String,
     fssai: String,
+    phone: Number,
     items: [
         {
             name: String,
