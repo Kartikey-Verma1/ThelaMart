@@ -11,40 +11,86 @@ app.use(express.json());
 
 connectDB();
 
+app.patch("/provider/items-by-email", async (req, res) => {
+  try {
+    const { email, items } = req.body;
+    const updated = await Provider.findOneAndUpdate(
+      { email },
+      { items },
+      { new: true }
+    );
+    if (!updated) {
+      return res.status(404).json({ error: "Provider not found" });
+    }
+    res.json(updated);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error updating items");
+  }
+});
+
+// In your Express backend
+app.patch('/provider/remove-item', async (req, res) => {
+  const { email, itemId } = req.body;
+  try {
+    const result = await Provider.updateOne(
+      { email },
+      { $pull: { items: { _id: itemId } } }
+    );
+    const updatedUser = await Provider.findOne({ email });
+    res.json(updatedUser);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete item' });
+  }
+});
+
+
 // Vendor signup
 app.post("/vendor", async (req, res) => {
-    const { name, email, fssai, items } = req.body;
-    try {
-        const vendor = new Vendor({ name, email, fssai, items });
-        await vendor.save();
-        res.status(201).send("Vendor saved!");
-    } catch (err) {
-        res.status(500).send("Error saving vendor");
-    }
+  const { name, email, password } = req.body;
+  try {
+    const vendor = await Vendor.create({ name, email, password });
+    res.status(201).json(vendor);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error saving vendor");
+  }
 });
 
 // Provider signup
 app.post("/provider", async (req, res) => {
-    const { name, email, items } = req.body;
-    try {
-        const provider = new Provider({ name, email, items });
-        await provider.save();
-        res.status(201).send("Provider saved!");
-    } catch (err) {
-        res.status(500).send("Error saving provider");
-    }
+  const { name, email, password, fssai, items = [] } = req.body;
+  try {
+    const provider = await Provider.create({ name, email, password, fssai, items });
+    res.status(201).json(provider);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error saving provider");
+  }
 });
 
 // View all vendors
 app.get("/vendors", async (req, res) => {
+  try {
     const vendors = await Vendor.find();
     res.json(vendors);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching vendors");
+  }
 });
 
 // View all providers
 app.get("/providers", async (req, res) => {
+  try {
     const providers = await Provider.find();
     res.json(providers);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching providers");
+  }
 });
+
+
 
 app.listen(5000, () => console.log("Server running on port 5000"));

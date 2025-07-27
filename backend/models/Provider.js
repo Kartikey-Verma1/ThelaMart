@@ -5,7 +5,13 @@ const ProviderSchema = new mongoose.Schema({
     email: String,
     password: String,
     fssai: String,
-    items: [String],
+    items: [
+        {
+            name: String,
+            price: Number,
+            description: String,
+        }
+    ],
 });
 
 module.exports = mongoose.model("Provider", ProviderSchema);
