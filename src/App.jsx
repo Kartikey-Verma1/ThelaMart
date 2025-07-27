@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css'
-import VendorBody from "./Components/Vendor_Side/VendorBody/VendorBody";
 import Layout from "./Components/Layout";
 import SignIn from "./Components/Sign/SignIn/SignIn";
 import SignUp from "./Components/Sign/SignUp/SignUp";
@@ -9,6 +8,7 @@ import Profile from "./Components/Profile/Profile";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import AddItems from "./Components/AddItems/AddItems";
+import Home from "./Components/Home/Home";
 
 const App = ()=>{
   const [user, setuser] = useState(()=>{
@@ -26,7 +26,7 @@ const App = ()=>{
 
         <Route path="/" element={<Layout user={user} setuser={setuser}/>}>
 
-          <Route path="/" element={<VendorBody />} />
+          <Route path="/" element={<Home />} />
           {user && <Route path="/profile" element={<Profile user={user} setuser={setuser}/>} />}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
