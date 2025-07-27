@@ -45,7 +45,7 @@
   color: #00bfff;
 }
 
-/* Profile icons (fluid) */
+/* Profile icons */
 .profile {
   width: clamp(20px, 2vw, 24px);
   height: auto;
@@ -104,7 +104,11 @@
     border-top: none;
   }
 
-  /* bring dropdown a little closer on small screens */
+  .profile {
+    height: 20px;
+    width: 20px;
+  }
+
   .header_profile_drop {
     top: calc(100% + 2px);
     right: 8px;

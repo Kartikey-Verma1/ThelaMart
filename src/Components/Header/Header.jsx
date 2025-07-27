@@ -17,14 +17,13 @@ const Header = ({user, setuser}) => {
                     <Link to="/"><li>Home</li></Link>
                     <Link to="/about"><li>About</li></Link>
                     <Link to="/contact"><li>Contact</li></Link>
-                    <li><img src="/cart.png" alt="Cart" className="cart"/></li>
                     <li>
                         <img src="/profile_logo.png" alt="Profile" className="profile" onClick={handledrop}/>
                         {isdrop && (
                             user ? (
                                 <ul className="header_profile_drop">
                                     <Link to="/profile"><li>Profile</li></Link>
-                                    <li onClick={() => setuser(null)}>Log Out</li>
+                                    <Link to="/"><li onClick={() => setuser(null)}>Log Out</li></Link>
                                 </ul>
                             ) : (
                                 <ul className="header_profile_drop">

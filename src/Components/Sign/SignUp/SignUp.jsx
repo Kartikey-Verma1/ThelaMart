@@ -61,7 +61,7 @@ const SignUp = ({setuser})=>{
                 <input 
                     type="text" 
                     id="name" 
-                    placeholder="Enter Your Name" 
+                    placeholder="Enter Your Company Name" 
                     required className="signup_name" 
                     onChange={(e)=>{setname(e.target.value)}}/>
                 
