@@ -1,3 +1,97 @@
 .home{
     display: flex;
 }
+/* Home.css – Dark Theme, Fully Responsive */
+
+/* Theme variables */
+:root {
+  --bg-main: #1e1e1e;
+  --card-bg: #2c2c2c;
+  --text-main: #e0e0e0;
+  --text-accent: #00bfff;
+  --border-color: #333;
+  --gap-base: clamp(12px, 2vw, 24px);
+  --padding-base: clamp(12px, 1.5vw, 24px);
+  --font-base: clamp(14px, 1.2vw, 18px);
+  --font-title: clamp(16px, 1.4vw, 20px);
+}
+
+/* Page background */
+.home {
+    margin: 50px auto;
+  background-color: var(--bg-main);
+  min-height: 100vh;
+  padding: var(--padding-base);
+  display: grid;
+  /* auto-fit cards, each at least 280px, filling available space */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap-base);
+  box-sizing: border-box;
+}
+
+/* Card container */
+.usercard {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  border-radius: 8px;
+  padding: var(--padding-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vw, 16px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.usercard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Field rows */
+.usercard > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-base);
+}
+
+.usercard p {
+  margin: 0;
+}
+
+/* Titles */
+.name_title,
+.phone_title,
+.email_title {
+  font-weight: 600;
+  font-size: var(--font-title);
+  color: var(--text-accent);
+}
+
+/* Values */
+.name_user,
+.phone_user,
+.email_user {
+  font-weight: 400;
+}
+
+/* Single breakpoint: small screens */
+@media screen and (max-width: 480px) {
+  .home {
+    padding: clamp(8px, 4vw, 16px);
+    grid-template-columns: 1fr;
+  }
+  .usercard {
+    padding: clamp(8px, 4vw, 16px);
+  }
+  .usercard > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(4px, 2vw, 8px);
+  }
+  .name_title,
+  .phone_title,
+  .email_title {
+    text-align: left;
+  }
+}
