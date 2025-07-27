@@ -1,0 +1,128 @@
+/* AddItems.css – Dark Theme, Fully Responsive */
+
+/* Root variables for easy theming */
+:root {
+  --bg-color: #1e1e1e;
+  --card-bg: #2c2c2c;
+  --text-color: #e0e0e0;
+  --border-color: #444;
+  --accent-color: #00bfff;
+  --input-padding: clamp(8px, 1.5vw, 16px);
+  --font-size-base: clamp(14px, 1.2vw, 18px);
+  --gap-base: clamp(12px, 2vw, 24px);
+}
+
+/* Form container */
+.add-items-form {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: var(--gap-base);
+  max-width: 480px;
+  width: 90%;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-base);
+  font-size: var(--font-size-base);
+}
+
+/* Form heading */
+.add-items-form h4 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 24px);
+  text-align: center;
+  color: var(--accent-color);
+}
+
+/* Labels & inputs wrapper */
+.add-items-form label {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 1vw, 8px);
+  font-weight: 500;
+}
+
+/* Text inputs and textarea */
+.add-items-form input[type="text"],
+.add-items-form input[type="number"],
+.add-items-form textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: var(--input-padding);
+  font-size: var(--font-size-base);
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.add-items-form input:focus,
+.add-items-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Button */
+.add-items-form button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: var(--input-padding);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-items-form button:hover:not(:disabled) {
+  background-color: #009adf;
+}
+
+.add-items-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Single breakpoint: below tablet (<=768px) center-align form content */
+@media (max-width: 768px) {
+  .add-items-form {
+    padding: clamp(16px, 4vw, 32px);
+    gap: clamp(16px, 4vw, 32px);
+  }
+
+  .add-items-form label {
+    align-items: center;
+    text-align: center;
+  }
+
+  .add-items-form input,
+  .add-items-form textarea {
+    width: 100%;
+  }
+}
+
+/* Hide number input spinners (Chrome, Safari, Edge, Opera) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide number input spinners (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* disable all resizing */
+.add-items-form textarea {
+  resize: none;
+}
+
+/* if you’d rather only allow vertical (height) changes but lock width:
+.add-items-form textarea {
+  resize: vertical;
+} */
+
