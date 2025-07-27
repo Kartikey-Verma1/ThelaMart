@@ -14,16 +14,16 @@ const Header = ({user, setuser}) => {
             </div>
             <div className="header_options">
                 <ul className="header_options_list">
-                    <Link to="/"><li>Home</li></Link>
-                    <Link to="/about"><li>About</li></Link>
-                    <Link to="/contact"><li>Contact</li></Link>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li>
                         <img src="/profile_logo.png" alt="Profile" className="profile" onClick={handledrop}/>
                         {isdrop && (
                             user ? (
                                 <ul className="header_profile_drop">
-                                    <Link to="/profile"><li>Profile</li></Link>
-                                    <Link to="/"><li onClick={() => setuser(null)}>Log Out</li></Link>
+                                    <li><Link to="/profile">Profile</Link></li>
+                                    <li onClick={() => setuser(null)}><Link to="/">Log Out</Link></li>
                                 </ul>
                             ) : (
                                 <ul className="header_profile_drop">

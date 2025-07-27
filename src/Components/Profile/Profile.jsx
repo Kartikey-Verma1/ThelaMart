@@ -23,7 +23,7 @@ const Profile = ({user, setuser})=>{
     };
 
     return(
-        <div className="profile">
+        <div className="profile_container">
             <div className="profile_info_container">
                 <h2 className="profile_head">Profile</h2>
                 <div className="profile_info">

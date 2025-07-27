@@ -13,7 +13,7 @@
 
 /* Logo (fluid width) */
 .header_logo_img {
-  width: clamp(60px, 10vw, 100px);
+  width: 60px;
   height: auto;
 }
 

@@ -1,0 +1,11 @@
+.error{
+    color: whitesmoke;
+    & #oops{
+        font-size: 5rem;
+        margin: 1rem 2rem; 
+    }
+    & #swr, #error-code{
+        font-size: 2rem;
+        margin: 1rem 2rem;
+    }
+}

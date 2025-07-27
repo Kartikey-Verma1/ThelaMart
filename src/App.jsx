@@ -9,6 +9,7 @@ import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import AddItems from "./Components/AddItems/AddItems";
 import Home from "./Components/Home/Home";
+import Error from "./Components/Error/Error";
 
 const App = ()=>{
   const [user, setuser] = useState(()=>{
@@ -36,7 +37,7 @@ const App = ()=>{
 
         <Route path="/signin" element={<SignIn setuser={setuser} />} />
         <Route path="/signup" element={<SignUp setuser={setuser} />} />
-        
+        <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   )
