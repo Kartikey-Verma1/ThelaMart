@@ -61,7 +61,7 @@ const handleSubmit = async e => {
       </label>
 
       <label>
-        Price
+        Price (per kg)
         <input
           type="number"
           value={price}
