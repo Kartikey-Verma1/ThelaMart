@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./signup.css";
+import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { adduser, fetchDataByRole } from "../../../Utils/functions";
 
