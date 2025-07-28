@@ -6,7 +6,9 @@ const Vendor = require("./models/Vendor");
 const Provider = require("./models/Provider");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://thela-mart.vercel.app/'
+}));
 app.use(express.json());
 
 connectDB();

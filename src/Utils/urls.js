@@ -1,7 +1,7 @@
-export const providerpost = "http://localhost:5000/Provider";
+export const providerpost = "https://thelamartbackend.onrender.com/Provider";
 
-export const vendorpost = "http://localhost:5000/Vendor";
+export const vendorpost = "https://thelamartbackend.onrender.com/Vendor";
 
-export const providerget = "http://localhost:5000/Providers";
+export const providerget = "https://thelamartbackend.onrender.com/Providers";
 
-export const vendorget = "http://localhost:5000/Vendors";
+export const vendorget = "https://thelamartbackend.onrender.com/Vendors";
