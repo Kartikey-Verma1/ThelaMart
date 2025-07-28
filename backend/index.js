@@ -6,10 +6,27 @@ const Vendor = require("./models/Vendor");
 const Provider = require("./models/Provider");
 
 const app = express();
-app.use(cors({
-  origin: 'https://thela-mart.vercel.app/'
-}));
 app.use(express.json());
+const allowedOrigins = [
+  "https://thela-mart.vercel.app",
+  "https://thela-mart.vercel.app/",    // allow with slash too
+  "http://localhost:5173"
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    // allow requests with no origin (e.g. mobile apps, curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    console.error("Blocked by CORS:", origin);
+    callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET","POST","PATCH","DELETE","OPTIONS"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 connectDB();
 
