@@ -17,7 +17,7 @@ const handleSubmit = async e => {
   setLoading(true);
   try {
     const res = await fetch(
-      "http://localhost:5000/provider/items-by-email",
+      "http://thelamartbackend.onrender.com/provider/items-by-email",
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
