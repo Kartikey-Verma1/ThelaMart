@@ -10,7 +10,7 @@ app.use(express.json());
 const allowedOrigins = [
   "https://thela-mart.vercel.app",
   "https://thela-mart.vercel.app/",    // allow with slash too
-  "http://localhost:5173"
+  "http://localhost:5173/"
 ];
 
 const corsOptions = {

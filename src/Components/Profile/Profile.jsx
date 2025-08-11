@@ -1,10 +1,11 @@
+import { removeitemurl } from "../../Utils/urls";
 import "./Profile.css";
 import { Link } from "react-router-dom";
 
 const Profile = ({user, setuser})=>{
     const handleDelete = async (itemId) => {
     try {
-        const res = await fetch("http://localhost:5000/provider/remove-item", {
+        const res = await fetch(removeitemurl, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: user.email, itemId })

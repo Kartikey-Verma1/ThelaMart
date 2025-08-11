@@ -1,3 +1,4 @@
+import { additemurl } from "../../Utils/urls";
 import "./AddItems.css";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ const handleSubmit = async e => {
   setLoading(true);
   try {
     const res = await fetch(
-      "http://localhost:5000/provider/items-by-email",
+      additemurl,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
