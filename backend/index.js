@@ -14,15 +14,9 @@ const allowedOrigins = [
 ];
 
 const corsOptions = {
-  origin(origin, callback) {
-    // allow requests with no origin (e.g. mobile apps, curl)
-    if (!origin || allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    console.error("Blocked by CORS:", origin);
-    callback(new Error("Not allowed by CORS"));
-  },
-  methods: ["GET","POST","PATCH","DELETE","OPTIONS"],
+  origin: allowedOrigins,
+  methods: ["GET","POST","PATCH","DELETE","OPTIONS","PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 };
 
