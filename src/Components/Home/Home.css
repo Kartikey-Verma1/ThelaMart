@@ -18,7 +18,7 @@
 
 /* Page background */
 .home {
-    margin: 50px auto;
+  margin: 50px auto;
   background-color: var(--bg-main);
   min-height: 100vh;
   padding: var(--padding-base);

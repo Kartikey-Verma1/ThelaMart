@@ -22,8 +22,8 @@ const Header = ({user, setuser}) => {
                         {isdrop && (
                             user ? (
                                 <ul className="header_profile_drop">
-                                    <li><Link to="/profile">Profile</Link></li>
-                                    <li onClick={() => setuser(null)}><Link to="/">Log Out</Link></li>
+                                    <Link to="/profile"><li>Profile</li></Link>
+                                    <Link to="/" onClick={() => setuser(null)}><li>Log Out</li></Link>
                                 </ul>
                             ) : (
                                 <ul className="header_profile_drop">
