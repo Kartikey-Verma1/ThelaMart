@@ -16,7 +16,7 @@ const Home = ()=>{
     return (
         <div className="home">
             {   
-                (userList.length === 0) ? 
+                (userList.length > 0) ? 
                 (userList.map((user)=>(
                     <div className="usercard" key={user._id}>
                         <div className="name"><p className="name_title">Name:</p><p className="name_user">{user.name}</p></div>
