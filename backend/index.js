@@ -7,6 +7,9 @@ const Provider = require("./models/Provider");
 
 const app = express();
 app.use(express.json());
+
+require('dotenv').config();
+
 const allowedOrigins = [
   "https://thela-mart.vercel.app",
   "http://localhost:5173"
